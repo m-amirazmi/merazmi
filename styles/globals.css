@@ -8,9 +8,18 @@
 	transition: all 0.25s ease-in;
 }
 
+.sidelinks a {
+	transition: all 0.25s ease-in;
+}
+
+.sidelinks a:hover {
+	color: #0e7490;
+}
+
 .sidelinks a:hover p {
 	visibility: visible;
 	opacity: 0.3;
+	color: #0e7490;
 }
 
 .sidelinks a.active p {

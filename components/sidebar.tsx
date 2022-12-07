@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useRef } from 'react';
-import { menu } from '../data/menu';
+import { menu, socials } from '../data/menu';
 
 export default function Sidebar() {
 	const { pathname } = useRouter();
@@ -21,6 +20,18 @@ export default function Sidebar() {
 					<div className="h-7 w-7">{<i.icon />}</div>
 				</Link>
 			))}
+			<div className="mt-8 flex justify-between">
+				{socials.map((i) => (
+					<Link
+						target="_blank"
+						key={i.id}
+						href={i.link}
+						className="flex h-10 w-10 cursor-pointer items-center justify-center rounded border border-gray-500 hover:border-cyan-700 hover:text-cyan-700"
+					>
+						<i className={`fa-brands ${i.icon} text-lg`}></i>
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 }
