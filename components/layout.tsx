@@ -1,11 +1,17 @@
-import { ReactNode } from 'react';
-
-interface IComponent {
-	children: ReactNode;
-}
-
-interface ILayout extends IComponent {}
+import { ILayout } from '../utils/interfaces';
+import Sidebar from './sidebar';
 
 export default function Layout({ children }: ILayout) {
-	return <div className="w-screen min-h-screen h-full bg-gray-300 dark:bg-gray-800">{children}</div>;
+	return (
+		<div className="min-h-screen w-screen bg-zinc-100 dark:bg-primary-dark">
+			<div className="container mx-auto">
+				<div className="flex flex-row">
+					<div className="w-[250px] py-20">
+						<Sidebar />
+					</div>
+					{/* <div className="w-full">{children}</div> */}
+				</div>
+			</div>
+		</div>
+	);
 }
